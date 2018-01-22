@@ -1,0 +1,22 @@
+%h2 Details about #{@book.title}
+
+%ul#details
+  %li
+    Title:
+    = @book.title
+  %li
+    Genre:
+    = @book.genre
+  %li
+    ISBN Number:
+    = @book.isbn_number
+  %li
+    Publish Date:
+    = @book.publish_date.strftime("%B %d, %Y")
+  %li
+    Description:
+    = @book.description
+
+  = link_to 'Edit info', edit_book_path(@book)
+  = link_to 'Delete', book_path(@book), :method => :delete
+  = link_to 'Back to book list', books_path
